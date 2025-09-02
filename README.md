@@ -11,6 +11,7 @@ The notification is sent to an SNS topic (Source SNS).
 The SNS topic fan-outs the event to SQS (Source Queue) for reliable delivery.
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
 
+
 3. ETL Processing
 The SQS message triggers an ETL Lambda function.
 Lambda initiates an AWS Glue job to process the incoming file:
@@ -19,15 +20,19 @@ Writes the processed output to the Target S3 bucket (target path) in Parquet for
 <img width="476" height="214" alt="image" src="https://github.com/user-attachments/assets/e4a3be23-cdcc-443b-a5b3-7f5df8fbc918" />
 <img width="709" height="280" alt="image" src="https://github.com/user-attachments/assets/ecf79330-ae73-4b96-84a8-085c466fa873" />
 
+
+
 4. Data Cataloguing
 Once new data lands in the target bucket, another S3 notification triggers a Crawler Lambda.
 This Lambda runs a Glue Crawler that updates the Glue Data Catalog with the new schema/partitions.
 Updated metadata enables Athena to query the latest data.
 
+
 5. Monitoring & Alerts
 Dead-letter queue (DLQ) captures failed SQS messages.
 CloudWatch Alarm monitors DLQ and sends alerts via PagerDuty SNS topic.
 Alerts are integrated with PagerDuty and Slack for real-time monitoring.
+
 
 6. Event-driven Notifications
 EventBridge Rules capture pipeline-related events (success/failure).
