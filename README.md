@@ -43,9 +43,9 @@ Once new data lands in the target bucket, another S3 notification triggers a Cra
 This Lambda runs a Glue Crawler that updates the Glue Data Catalog with the new schema/partitions.
 Updated metadata enables Athena to query the latest data. A table in the AWS database becomes visible with the necessary data from the files.
 
-https://mail.google.com/mail/u/0?ui=2&ik=56901e0374&attid=0.1&permmsgid=msg-a:r769492459743353411&th=1990ca771e5ee0d1&view=fimg&fur=ip&permmsgid=msg-a:r769492459743353411&sz=s0-l75-ft&attbid=ANGjdJ8v29_TlhaGTYiXQT4602qnSl4OUrP8lFLfAt4hNRhy-baklx_EpUE0w1AcXTcqQZbBJzR_MvhNBCku4jDrPnxWl2JfKQCPaEi8ObzT6eHsjR9PUuxl43KRw48&disp=emb&realattid=ii_mf30iirj0&zw<img width="500" height="430" alt="image" src="https://github.com/user-attachments/assets/77c0ce63-605e-4bff-a6f1-b15dc05a85f0" />
+<img width="200" height="215" alt="image" src="https://github.com/user-attachments/assets/77c0ce63-605e-4bff-a6f1-b15dc05a85f0" />
 
-https://mail.google.com/mail/u/0?ui=2&ik=56901e0374&attid=0.2&permmsgid=msg-a:r769492459743353411&th=1990ca771e5ee0d1&view=fimg&fur=ip&permmsgid=msg-a:r769492459743353411&sz=s0-l75-ft&attbid=ANGjdJ9gT34-hI9nDN6Tl8oe0e9eSvnk5USaViSoPMxP_U8w45FuZYaWGwHAluq5ywWhdzwQbQ7KeMFrfFYWAtvHV8MdUtRV9fJXgf22sL9mIGmp3k6llsaTZGWVhcY&disp=emb&realattid=ii_mf30j28b1&zw<img width="1550" height="720" alt="image" src="https://github.com/user-attachments/assets/728bdc5a-b59a-4a35-9cc0-2df7ccb7b175" />
+<img width="725" height="360" alt="image" src="https://github.com/user-attachments/assets/728bdc5a-b59a-4a35-9cc0-2df7ccb7b175" />
 
 
 **5. Monitoring & Alerts**
