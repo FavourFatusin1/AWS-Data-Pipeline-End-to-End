@@ -19,18 +19,22 @@ This project implements an event-driven, serverless ETL pipeline on AWS. Raw dat
 
 **2. Event Propagation**
 
-The notification is sent to an SNS topic (**arn:aws:sns:us-east-2:966656799543:edp-topic-09022025**).
-The SNS topic **then** fan-outs the event to an SQS queue (**arn:aws:sqs:us-east-2:966656799543:edp-queue-09022025**) for reliable delivery.
+- The notification is sent to an SNS topic (**arn:aws:sns:us-east-2:966656799543:edp-topic-09022025**).
+
+- The SNS topic **then** fan-outs the event to an SQS queue (**arn:aws:sqs:us-east-2:966656799543:edp-queue-09022025**) for reliable delivery.
 
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
 
 
 **3. ETL Processing**
 
-The SQS message triggers an ETL Lambda function.
-Lambda initiates an AWS Glue job to process the incoming file:
-Cleans, transforms, and deduplicates the data.
-Writes the processed output to the Target S3 bucket (target path) in Parquet format.
+- The SQS message triggers an ETL Lambda function.
+  
+- Lambda initiates an AWS Glue job to process the incoming file:
+  
+  - Cleans, transforms, and deduplicates the data.
+  - 
+  - Writes the processed output to the Target S3 bucket (target path) in Parquet format.
 
 <img width="476" height="214" alt="image" src="https://github.com/user-attachments/assets/e4a3be23-cdcc-443b-a5b3-7f5df8fbc918" />
 
@@ -62,3 +66,11 @@ EventBridge Rules capture pipeline-related events (success/failure).
 These rules publish to PagerDuty SNS, ensuring visibility in PagerDuty and Slack.
 
 AWS Data Pipeline ingests raw data to S3, triggers SNS→SQS for reliable delivery, and ETL Lambda runs Glue jobs to clean/transform into Parquet in target S3. A Crawler Lambda updates Glue Catalog for Athena queries. DLQ &amp; CloudWatch monitor errors, while EventBridge + PagerDuty + Slack provide real-time alerts and observability.
+
+**Real World Applications**
+1. Fraud Detection: The pipeline can be applied to financial services where real-time transaction data is ingested, transformed, and analyzed to detect anomalies and fraudulent activities, helping banks and payment providers mitigate risks.
+   
+2. E-Commerce Analytics: Online retailers can leverage the architecture to process large volumes of order, inventory, and customer behavior data. The insights can feed business intelligence dashboards to optimize marketing strategies, pricing, and supply chain management.
+
+3. IoT Data Processing: Organizations managing IoT devices can use the pipeline to process and analyze continuous streams of sensor data. This enables predictive maintenance, operational optimization, and real-time monitoring across industries like manufacturing, logistics, and healthcare.
+
