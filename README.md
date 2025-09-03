@@ -7,11 +7,13 @@
 **1. Source Data Ingestion**
 Raw data is stored in the Source S3 bucket (edp-source-09022025).
 An S3 event notification is triggered whenever a new file arrives.
+
 <img width="720" height="223" alt="image" src="https://github.com/user-attachments/assets/3811fe92-03e2-4715-a63d-c29788720df8" />
 
 **2. Event Propagation**
 The notification is sent to an SNS topic (Source SNS).
 The SNS topic fan-outs the event to SQS (Source Queue) for reliable delivery.
+
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
 
 
@@ -20,7 +22,9 @@ The SQS message triggers an ETL Lambda function.
 Lambda initiates an AWS Glue job to process the incoming file:
 Cleans, transforms, and deduplicates the data.
 Writes the processed output to the Target S3 bucket (target path) in Parquet format.
+
 <img width="476" height="214" alt="image" src="https://github.com/user-attachments/assets/e4a3be23-cdcc-443b-a5b3-7f5df8fbc918" />
+
 <img width="709" height="280" alt="image" src="https://github.com/user-attachments/assets/ecf79330-ae73-4b96-84a8-085c466fa873" />
 
 
