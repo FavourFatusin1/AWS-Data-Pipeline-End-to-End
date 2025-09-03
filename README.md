@@ -11,8 +11,9 @@ This project implements an event-driven, serverless ETL pipeline on AWS. Raw dat
 
 **1. Source Data Ingestion**
 
-Raw data is stored in the Source S3 bucket (**edp-source-09022025**).
-An S3 event notification is triggered whenever a new file arrives.
+- Raw data is stored in the Source S3 bucket (**edp-source-09022025**).
+
+- An S3 event notification is triggered whenever a new file arrives.
 
 <img width="720" height="223" alt="image" src="https://github.com/user-attachments/assets/3811fe92-03e2-4715-a63d-c29788720df8" />
 
