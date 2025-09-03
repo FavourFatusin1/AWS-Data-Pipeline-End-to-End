@@ -68,9 +68,12 @@ These rules publish to PagerDuty SNS, ensuring visibility in PagerDuty and Slack
 AWS Data Pipeline ingests raw data to S3, triggers SNS→SQS for reliable delivery, and ETL Lambda runs Glue jobs to clean/transform into Parquet in target S3. A Crawler Lambda updates Glue Catalog for Athena queries. DLQ &amp; CloudWatch monitor errors, while EventBridge + PagerDuty + Slack provide real-time alerts and observability.
 
 **Real World Applications**
-1. Fraud Detection: The pipeline can be applied to financial services where real-time transaction data is ingested, transformed, and analyzed to detect anomalies and fraudulent activities, helping banks and payment providers mitigate risks.
-   
-2. E-Commerce Analytics: Online retailers can leverage the architecture to process large volumes of order, inventory, and customer behavior data. The insights can feed business intelligence dashboards to optimize marketing strategies, pricing, and supply chain management.
 
-3. IoT Data Processing: Organizations managing IoT devices can use the pipeline to process and analyze continuous streams of sensor data. This enables predictive maintenance, operational optimization, and real-time monitoring across industries like manufacturing, logistics, and healthcare.
+There are many real world applications of a project like this
+
+1. **Fraud Detection:** The pipeline can be applied to financial services where real-time transaction data is analyzed to detect fraudulent activities, helping banks lower risks.
+   
+2. **Consumer Analytics:** Online retailers can use this process customer behavior data. The insights can feed business intelligence dashboards to optimize marketing strategies, pricing, and supply chain management.
+
+3. **Social Media & Marketing:** Take marketing campaign activity data, clean it up with Glue, and use Athena to see how well the campaign is doing almost right away.
 
