@@ -5,7 +5,7 @@ This project implements an event-driven, serverless ETL pipeline on AWS. Raw dat
 
 **The full pipeline architecture is illustrated in the flowchart below.**
 
-<img width="1560" height="1054" alt="image" src="https://github.com/user-attachments/assets/10767a84-02d6-4df3-8cf9-84caa81770c1" />
+<img width="776" height="522" alt="image" src="https://github.com/user-attachments/assets/fc423c79-4a41-4284-9070-ae4c213e9750" />
 
 
 
