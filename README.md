@@ -1,6 +1,7 @@
 # AWS-Data-Pipeline-End-to-End
 
-<img width="2720" height="950" alt="image" src="https://github.com/user-attachments/assets/bb8973d9-2652-4c84-9f23-046aa643b819" />
+<img width="905" height="792" alt="image" src="https://github.com/user-attachments/assets/a045dbc0-1e18-41d4-ba84-3343f28d3311" />
+
 
 1. Source Data Ingestion
 Raw data is stored in the Source S3 bucket (edp-source-09022025).
