@@ -11,8 +11,8 @@ An S3 event notification is triggered whenever a new file arrives.
 <img width="720" height="223" alt="image" src="https://github.com/user-attachments/assets/3811fe92-03e2-4715-a63d-c29788720df8" />
 
 **2. Event Propagation**
-The notification is sent to an SNS topic (Source SNS).
-The SNS topic fan-outs the event to SQS (Source Queue) for reliable delivery.
+The notification is sent to an SNS topic(**arn:aws:sns:us-east-2:966656799543:edp-topic-09022025**).
+The SNS topic fan-outs the event to an SQS queue (**arn:aws:sqs:us-east-2:966656799543:edp-queue-09022025**) for reliable delivery.
 
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
 
