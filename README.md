@@ -5,13 +5,13 @@
 
 
 **1. Source Data Ingestion**
-Raw data is stored in the Source S3 bucket (edp-source-09022025).
+Raw data is stored in the Source S3 bucket (**edp-source-09022025**).
 An S3 event notification is triggered whenever a new file arrives.
 
 <img width="720" height="223" alt="image" src="https://github.com/user-attachments/assets/3811fe92-03e2-4715-a63d-c29788720df8" />
 
 **2. Event Propagation**
-The notification is sent to an SNS topic(**arn:aws:sns:us-east-2:966656799543:edp-topic-09022025**).
+The notification is sent to an SNS topic (**arn:aws:sns:us-east-2:966656799543:edp-topic-09022025**).
 The SNS topic **then** fan-outs the event to an SQS queue (**arn:aws:sqs:us-east-2:966656799543:edp-queue-09022025**) for reliable delivery.
 
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
