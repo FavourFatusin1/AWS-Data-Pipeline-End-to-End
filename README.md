@@ -1,6 +1,5 @@
 # AWS-Data-Pipeline-End-to-End
 
-**AWS Data Pipeline – End-to-End**
 
 This project implements an event-driven, serverless ETL pipeline on AWS. Raw data is ingested into S3, event notifications trigger downstream services (SNS → SQS → Lambda), and AWS Glue performs scalable data transformations into Parquet. A Glue Crawler updates the Data Catalog for querying in Athena, while CloudWatch, EventBridge, and PagerDuty provide robust monitoring and alerting.
 
