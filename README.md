@@ -4,17 +4,18 @@
 
 
 
-1. Source Data Ingestion
+**1. Source Data Ingestion**
 Raw data is stored in the Source S3 bucket (edp-source-09022025).
 An S3 event notification is triggered whenever a new file arrives.
 <img width="720" height="223" alt="image" src="https://github.com/user-attachments/assets/3811fe92-03e2-4715-a63d-c29788720df8" />
-2. Event Propagation
+
+**2. Event Propagation**
 The notification is sent to an SNS topic (Source SNS).
 The SNS topic fan-outs the event to SQS (Source Queue) for reliable delivery.
 <img width="552" height="132" alt="image" src="https://github.com/user-attachments/assets/bf1dbc26-c537-49a3-b0f8-eae71a9a8f50" />
 
 
-3. ETL Processing
+**3. ETL Processing**
 The SQS message triggers an ETL Lambda function.
 Lambda initiates an AWS Glue job to process the incoming file:
 Cleans, transforms, and deduplicates the data.
@@ -24,19 +25,19 @@ Writes the processed output to the Target S3 bucket (target path) in Parquet for
 
 
 
-4. Data Cataloguing
+**4. Data Cataloguing**
 Once new data lands in the target bucket, another S3 notification triggers a Crawler Lambda.
 This Lambda runs a Glue Crawler that updates the Glue Data Catalog with the new schema/partitions.
 Updated metadata enables Athena to query the latest data.
 
 
-5. Monitoring & Alerts
+**5. Monitoring & Alerts**
 Dead-letter queue (DLQ) captures failed SQS messages.
 CloudWatch Alarm monitors DLQ and sends alerts via PagerDuty SNS topic.
 Alerts are integrated with PagerDuty and Slack for real-time monitoring.
 
 
-6. Event-driven Notifications
+**6. Event-driven Notifications**
 EventBridge Rules capture pipeline-related events (success/failure).
 These rules publish to PagerDuty SNS, ensuring visibility in PagerDuty and Slack.
 
