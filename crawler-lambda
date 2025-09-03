@@ -1,0 +1,30 @@
+#crawler-lambda
+import boto3
+
+def lambda_handler(event, context):
+
+    region = 'ap-south-1'
+    crawler_name = 'sb_crawler'
+    
+    # Create a Glue client
+    glue_client = boto3.client('glue', region_name=region)
+    
+    # Start the Glue Crawler
+    glue_client.start_crawler(
+        Name=crawler_name
+    )
+
+14. check the whole process again if cralwer is getting triggered once we have a file in target location 
+15. check the data in athena table   
+16. Create a Pagerduty service 
+17. Create a sns-topic which we will use for sending alert to the pager duty < sns_pagerduty > . Create a subscription for this topic using pagerduty integration URL
+18. Create cloudwatch event rule on glue job failure, action will be to send message to pagerduty sns topic
+
+{
+  "source": ["aws.glue"],
+  "detail-type": ["Glue Job State Change"],
+  "detail": {
+    "state": ["FAILED"],
+    "jobName": ["sb_glue", "glue_job2", "glue_job3"]
+  }
+}
