@@ -1,7 +1,7 @@
 # AWS-Data-Pipeline-End-to-End
 
-[<img width="905" height="792" alt="image" src="https://github.com/user-attachments/assets/a045dbc0-1e18-41d4-ba84-3343f28d3311" />
-](https://mail.google.com/mail/u/0?ui=2&ik=56901e0374&attid=0.1&permmsgid=msg-a:r5278225978106667764&th=1990d3c234613d7b&view=fimg&fur=ip&permmsgid=msg-a:r5278225978106667764&sz=s0-l75-ft&attbid=ANGjdJ-kuDXFYw9-T4dRM5r9sBzA04IoGtkLfAZqVM9ROa77MUtcZCHYuYlTZQbR5w48eZ16LWJ8z_FiVc6E4j-Y-qq0GwM33bXSz2iViN7rR0CNG2YTmdaC7gOME-Y&disp=emb&realattid=ii_mf3b955t0&zw)<img width="1560" height="1054" alt="image" src="https://github.com/user-attachments/assets/393b9e59-71b9-45af-a40c-169a0ec599b6" />
+https://mail.google.com/mail/u/0?ui=2&ik=56901e0374&attid=0.1&permmsgid=msg-a:r5278225978106667764&th=1990d3c234613d7b&view=fimg&fur=ip&permmsgid=msg-a:r5278225978106667764&sz=s0-l75-ft&attbid=ANGjdJ-kuDXFYw9-T4dRM5r9sBzA04IoGtkLfAZqVM9ROa77MUtcZCHYuYlTZQbR5w48eZ16LWJ8z_FiVc6E4j-Y-qq0GwM33bXSz2iViN7rR0CNG2YTmdaC7gOME-Y&disp=emb&realattid=ii_mf3b955t0&zw<img width="1560" height="1054" alt="image" src="https://github.com/user-attachments/assets/10767a84-02d6-4df3-8cf9-84caa81770c1" />
+
 
 
 1. Source Data Ingestion
